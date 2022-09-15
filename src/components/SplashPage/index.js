@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-const Splash = () => {
+const SplashPage = () => {
 
   return (
     <div name='splash' className='w-full h-screen bg-[#171718]'>
@@ -32,4 +32,4 @@ const Splash = () => {
   )
 }
 
-export default Splash
+export default SplashPage

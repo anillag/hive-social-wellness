@@ -12,21 +12,14 @@ import "./style.css";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <div>
         <Router>
-          <header className="App-header">
-            <div>
-              <h1>Hive Social Wellness</h1>
-            </div>
-            <div>
-              <h2>Run, and Tell Your Friends!</h2>
-            </div>
+      
             <Nav></Nav>
-          </header>
           <Routes>
             <Route path="/" element={<SplashPage />} />
-            <Route path="/Join" element={<JoinPage />} /> {/* Join / Signup */}
+            <Route path="/joinpage" element={<JoinPage />} /> {/* Join / Signup */}
             <Route path="/TheHive" element={<TheHive />} />{" "}
             {/* Main Page / Dashboard */}
             <Route path="/TheBuzz" element={<TheBuzz />} /> {/* Newsfeed */}
