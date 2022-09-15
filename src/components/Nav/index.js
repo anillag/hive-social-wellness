@@ -6,7 +6,7 @@ const Nav = () => {
     <div>
       <nav>
         <section class="top-nav">
-          <div>
+          <div className="text-6xl px-6 py-3 text-[#e1e0d6]">
             <BiHive />
           </div>
           <input id="menu-toggle" type="checkbox" />
