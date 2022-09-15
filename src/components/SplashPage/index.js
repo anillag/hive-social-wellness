@@ -1,6 +1,7 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
-const SplashPage = () => {
+const Splash = () => {
 
   return (
     <div name='splash' className='w-full h-screen bg-[#171718]'>
@@ -12,12 +13,14 @@ const SplashPage = () => {
 
         {/* BUTTON */}
       <div>
-      <button> 
-         JOIN 
+      <button className="mt-7 py-3 text-2xl text-[#f0e265] border-4 border-[#f0e265] px-6 my-2 flex items-center hover:bg-[#f0e265] hover:text-[#171718]"> 
+        <NavLink to="/joinpage"> JOIN </NavLink> 
       </button>
       </div>
       <div>
-      
+      <button className='text- center text-2x text-[#afaa8f] hover:text-[#f0e265]'> 
+        Continue to buzz 
+      </button>
 
       
       </div>
@@ -29,4 +32,4 @@ const SplashPage = () => {
   )
 }
 
-export default SplashPage
+export default Splash
