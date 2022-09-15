@@ -1,5 +1,4 @@
 import React from "react";
-import { BiHive } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 
 const SplashPage = () => {
