@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { BiHive } from "react-icons/bi";
 const Nav = () => {
   return (
     <div>
       <nav>
         <section class="top-nav">
-          <div>Logo</div>
+          <div>
+            <BiHive />
+          </div>
           <input id="menu-toggle" type="checkbox" />
           <label class="menu-button-container" for="menu-toggle">
             <div class="menu-button"></div>
