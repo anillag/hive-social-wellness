@@ -3,8 +3,11 @@ import BeeButt from '../assets/beebutt.JPG'
 
 export default function JoinPage () {
   return(
-    <div className='w-full h-screen flex bg-[#171718]'>
+    <div className='w-full h-screen flex bg-[#171718] '>
+      <div class='bg-[#f0c965] rounded-full'> </div>
+
       <div className='grid grid-cols-1 md:grid-cols-2 m-auto h-[580px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]' >
+          
           <div className='w-full h-[580px] hidden md:block'>
              <img className="w-full h-full" src={BeeButt} alt="/" />  
           </div>
@@ -21,7 +24,7 @@ export default function JoinPage () {
               <input className='border p-2 m-2' type="text" placeholder='email'/>
             </div>
 
-            <button className="mt-3 mb-4 py-1 text-lg font-bold text-[#171718] border-4 border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
+            <button className="mt-3 mb-4 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
                     SIGN-UP 
                   </button>
 
@@ -30,7 +33,7 @@ export default function JoinPage () {
               <input className='border p-2 m-2' type="text" placeholder='username'/>
               <input className='border p-2 m-2' type="password" placeholder='password'/> 
             </div>
-                <button className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
+                <button className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
                 SIGN-IN</button>
           </form>
         </div>
