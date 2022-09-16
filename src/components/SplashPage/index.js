@@ -15,7 +15,7 @@ const SplashPage = () => {
         {/* BUTTON */}
         <div>
           <button className="mt-7 py-3 text-2xl font-bold text-[#f0c965] border-4 border-[#f0c965] px-6 my-2 flex items-center hover:bg-[#f0c965] hover:text-[#171718]">
-            <NavLink to="/joinpage"> JOIN </NavLink>
+            <NavLink to="/Join"> JOIN </NavLink>
           </button>
         </div>
         <div>
