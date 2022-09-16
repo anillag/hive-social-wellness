@@ -89,14 +89,27 @@ body {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
+
 .hiveFlex {
   text-align: center;
+  background-image: url(./components/assets/hivebackground.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hiveDiv {
   max-width: 500px;
   max-height: 500px;
   display: inline-block;
+}
+
+.hive-button {
+  background-image: linear-gradient(to left, #f0c965, #faab3d);
+  padding: 15px;
+  border-color: #f0c965;
+  box-shadow: 5px 5px #333;
+  display: flex;
 }
 
 @media (max-width: 700px) {
