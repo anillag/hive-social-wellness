@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
-import Footer from './components/Footer';
 import SplashPage from "./components/SplashPage";
 import JoinPage from "./components/JoinPage";
 import TheBuzz from "./components/TheBuzz";
@@ -20,18 +19,17 @@ function App() {
           <Nav></Nav>
           <Routes>
             <Route path="/" element={<SplashPage />} />
-            <Route path="/Join" element={<JoinPage />} /> {/* Join / Signup */}
-            <Route path="/TheHive" element={<TheHive />} />{" "}
+            <Route path="/join" element={<JoinPage />} /> {/* Join / Signup */}
+            <Route path="/the-hive" element={<TheHive />} />{" "}
             {/* Main Page / Dashboard */}
-            <Route path="/TheBuzz" element={<TheBuzz />} /> {/* Newsfeed */}
-            <Route path="/TheBusyBee" element={<TheBusyBee />} />{" "}
+            <Route path="/the-buzz" element={<TheBuzz />} /> {/* Newsfeed */}
+            <Route path="/the-busy-bee" element={<TheBusyBee />} />{" "}
             {/* Journaling */}
-            <Route path="/TheColony" element={<TheColony />} />{" "}
+            <Route path="/the-colony" element={<TheColony />} />{" "}
             {/* User Page */}
             <Route path="*" element={<NoMatch404 />} />
           </Routes>
-          <Footer/> 
-
+          <Footer />
         </Router>
       </div>
     </div>
