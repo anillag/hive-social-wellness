@@ -99,8 +99,8 @@ body {
 }
 
 .hiveDiv {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: max-content;
+  max-height: max-content;
   display: inline-block;
 }
 
@@ -110,6 +110,28 @@ body {
   border-color: #f0c965;
   box-shadow: 5px 5px #333;
   display: flex;
+}
+
+.buzz-button {
+  background-image: linear-gradient(to left, #f0c965, #faab3d);
+  padding: 15px;
+  border-color: #f0c965;
+  box-shadow: 5px 5px #333;
+  display: inline;
+}
+
+.buzz-text {
+  background-image: linear-gradient(to left, #f0c965, #faab3d);
+  border: 5px solid;
+  border-color: #faab3d;
+  border-style: inset;
+  border-radius: 18px;
+  padding: 20px;
+  width: 500px;
+  height: 15px;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: start;
 }
 
 @media (max-width: 700px) {
