@@ -9,6 +9,7 @@ import TheBusyBee from "./components/TheBusyBee";
 import TheHive from "./components/TheHive";
 import TheColony from "./components/TheColony";
 import NoMatch404 from "./components/NoMatch404";
+import Footer from "./components/Footer";
 import "./style.css";
 
 function App() {
@@ -16,11 +17,10 @@ function App() {
     <div>
       <div>
         <Router>
-      
-            <Nav></Nav>
+          <Nav></Nav>
           <Routes>
             <Route path="/" element={<SplashPage />} />
-            <Route path="/joinpage" element={<JoinPage />} /> {/* Join / Signup */}
+            <Route path="/Join" element={<JoinPage />} /> {/* Join / Signup */}
             <Route path="/TheHive" element={<TheHive />} />{" "}
             {/* Main Page / Dashboard */}
             <Route path="/TheBuzz" element={<TheBuzz />} /> {/* Newsfeed */}
@@ -31,6 +31,7 @@ function App() {
             <Route path="*" element={<NoMatch404 />} />
           </Routes>
           <Footer/> 
+
         </Router>
       </div>
     </div>

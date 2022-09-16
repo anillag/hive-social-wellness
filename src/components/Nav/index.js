@@ -1,14 +1,13 @@
 import React from "react";
 import {BiHive} from 'react-icons/bi';
 import { Link } from "react-router-dom";
-
+import { BiHive } from "react-icons/bi";
 const Nav = () => {
   return (
     <div>
       <nav>
         <section class="top-nav">
         <div className='text-7xl px-6 py-3 text-[#f0c965]' ><BiHive/></div> 
-
 
           <input id="menu-toggle" type="checkbox" />
           <label class="menu-button-container" for="menu-toggle">

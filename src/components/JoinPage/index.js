@@ -1,5 +1,5 @@
-import React from 'react';
-import BeeButt from '../assets/beebutt.JPG'
+import React from "react";
+import BeeButt from "../assets/beebutt.jpg";
 
 export default function JoinPage () {
   return(
@@ -14,30 +14,55 @@ export default function JoinPage () {
 
         <div className='p-5 flex flex-col justify-around'>
 
-          <form className='flex flex-col '>
-          <h2 className="text-4xl font-bold text-center mb-4 text-[#f0c965] "> WELCOME TO THE HIVE</h2>
+        <div className="p-5 flex flex-col justify-around">
+          <form className="flex flex-col ">
+            <h2 className="text-4xl font-bold text-center mb-4 text-[#f0c965] ">
+              {" "}
+              WELCOME TO THE HIVE
+            </h2>
 
             <h2 className="text-2xl font-bold text-center mb-4"> SIGN UP</h2>
-            <div >
-              <input className='border p-2 m-2' type="text" placeholder='username'/>
-              <input className='border p-2 m-2' type="password" placeholder='password'/> 
-              <input className='border p-2 m-2' type="text" placeholder='email'/>
+            <div>
+              <input
+                className="border p-2 m-2"
+                type="text"
+                placeholder="username"
+              />
+              <input
+                className="border p-2 m-2"
+                type="password"
+                placeholder="password"
+              />
+              <input
+                className="border p-2 m-2"
+                type="text"
+                placeholder="email"
+              />
             </div>
 
-            <button className="mt-3 mb-4 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
+          <button className="mt-3 mb-4 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
                     SIGN-UP 
                   </button>
 
             <h2 className="text-2xl font-bold text-center mb-4"> SIGN IN</h2>
             <div>
-              <input className='border p-2 m-2' type="text" placeholder='username'/>
-              <input className='border p-2 m-2' type="password" placeholder='password'/> 
+              <input
+                className="border p-2 m-2"
+                type="text"
+                placeholder="username"
+              />
+              <input
+                className="border p-2 m-2"
+                type="password"
+                placeholder="password"
+              />
             </div>
                 <button className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
                 SIGN-IN</button>
+
           </form>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -16,6 +16,7 @@ const Footer = () => {
         <a href='/'>  <AiOutlineMail /> </a></button>
 
         <button className='transform hover:rotate-90 text-3xl px-6 text-[#f0c965]'> 
+
         <a href='/'>  <RiMoneyDollarCircleFill /> </a></button>
         </div>
     </div>
