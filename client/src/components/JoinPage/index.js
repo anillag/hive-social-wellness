@@ -4,7 +4,7 @@ import BeeButt from "../assets/beebutt.jpg";
 export default function JoinPage() {
   return (
     <div className="w-full h-screen flex bg-[#171718] ">
-      <div class="bg-[#f0c965] rounded-full"> </div>
+      <div className="bg-[#f0c965] rounded-full"> </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[580px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
         <div className="w-full h-[580px] hidden md:block">
