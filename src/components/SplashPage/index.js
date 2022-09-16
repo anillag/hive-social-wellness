@@ -20,13 +20,6 @@ const SplashPage = () => {
         <NavLink to="/joinpage"> JOIN </NavLink> 
       </button>
       </div>
-      <div>
-      <button className='text- center text-2x text-[#afaa8f] hover:text-[#f0c965]'> 
-        Continue to buzz 
-      </button>
-
-      
-      </div>
       </div>
       
     </div>
