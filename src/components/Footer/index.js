@@ -6,16 +6,17 @@ const Footer = () => {
   return (
     <div className='bg-[#171718] '> 
         <div className='text-center py-6'> 
-        <button className='text-5xl px-6 text-[#f0c965]'> 
+        <button className='transform hover:rotate-90 text-3xl px-6 text-[#f0c965]'> 
         <a href='/'>  <AiOutlineLink /> </a></button>
 
-        <button className='text-5xl px-6 text-[#f0c965]'> 
+        <button className='transform hover:rotate-180 text-3xl px-6 text-[#f0c965]'> 
         <a href='/'>  <AiOutlineGithub /> </a></button>
 
-        <button className='text-5xl px-6 text-[#f0c965]'> 
+        <button className='transform hover:rotate-180 text-3xl px-6 text-[#f0c965]'> 
         <a href='/'>  <AiOutlineMail /> </a></button>
 
-        <button className='text-5xl px-6 text-[#f0c965]'> 
+        <button className='transform hover:rotate-90 text-3xl px-6 text-[#f0c965]'> 
+
         <a href='/'>  <RiMoneyDollarCircleFill /> </a></button>
         </div>
     </div>
