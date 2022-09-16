@@ -9,7 +9,6 @@ import TheBusyBee from "./components/TheBusyBee";
 import TheHive from "./components/TheHive";
 import TheColony from "./components/TheColony";
 import NoMatch404 from "./components/NoMatch404";
-import Footer from "./components/Footer";
 import "./style.css";
 
 function App() {

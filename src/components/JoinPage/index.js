@@ -1,25 +1,23 @@
 import React from "react";
-import BeeButt from "../assets/beebutt.jpg";
+import BeeButt from "../assets/beebutt.JPG";
 
 export default function JoinPage () {
   return(
     <div className='w-full h-screen flex bg-[#171718] '>
-      <div class='bg-[#f0c965] rounded-full'> </div>
-
+        <div>
+          
+        </div>
       <div className='grid grid-cols-1 md:grid-cols-2 m-auto h-[580px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]' >
           
           <div className='w-full h-[580px] hidden md:block'>
-             <img className="w-full h-full" src={BeeButt} alt="/" />  
+             <img className=" w-full h-full" src={BeeButt} alt="/" />  
           </div>
 
         <div className='p-5 flex flex-col justify-around'>
 
         <div className="p-5 flex flex-col justify-around">
           <form className="flex flex-col ">
-            <h2 className="text-4xl font-bold text-center mb-4 text-[#f0c965] ">
-              {" "}
-              WELCOME TO THE HIVE
-            </h2>
+           
 
             <h2 className="text-2xl font-bold text-center mb-4"> SIGN UP</h2>
             <div>
@@ -59,10 +57,10 @@ export default function JoinPage () {
             </div>
                 <button className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
                 SIGN-IN</button>
-
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }
