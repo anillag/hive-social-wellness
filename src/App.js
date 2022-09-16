@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
+import Footer from './components/Footer';
 import SplashPage from "./components/SplashPage";
 import JoinPage from "./components/JoinPage";
 import TheBuzz from "./components/TheBuzz";
@@ -29,7 +30,8 @@ function App() {
             {/* User Page */}
             <Route path="*" element={<NoMatch404 />} />
           </Routes>
-          <Footer />
+          <Footer/> 
+
         </Router>
       </div>
     </div>
