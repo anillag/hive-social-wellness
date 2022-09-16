@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const SplashPage = () => {
   return (
     <div name="splash" className="w-full h-screen bg-[#171718]">
-      {/* WELCOME splash */}
+      {/* WELCOME splash */}git
       <div className="flex flex-col justify-center items-center w-full h-full">
         <p className="text-3xl  text-[#e1e0d6]">
           Honey, this app was created for you.
