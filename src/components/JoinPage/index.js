@@ -39,7 +39,7 @@ export default function JoinPage () {
             </div>
 
           <button className="mt-3 mb-4 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"> 
-                    SIGN-UP 
+                    SIGN-UP NOW
                   </button>
 
             <h2 className="text-2xl font-bold text-center mb-4"> SIGN IN</h2>
