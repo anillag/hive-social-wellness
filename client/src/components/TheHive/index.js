@@ -9,25 +9,25 @@ const TheHive = () => {
     <div className="hiveFlex">
       <div className="text-5xl px-6 py-3 text-[#222] hiveDiv">
         <Link to="/the-buzz">
-          <button>
+          <button className="hive-button rounded-3xl">
             <GiTreeBeehive />
-            The Buzz!
+            &nbsp; The Buzz!
           </button>
         </Link>
       </div>
       <div className="text-5xl px-6 py-3 text-[#222] hiveDiv">
         <Link to="/the-colony">
-          <button>
+          <button className="hive-button rounded-3xl">
             <GiHoneycomb />
-            The Colony!
+            &nbsp; The Colony!
           </button>
         </Link>
       </div>
       <div className="text-5xl px-6 py-3 text-[#222] hiveDiv">
         <Link to="/the-busy-bee">
-          <button>
+          <button className="hive-button rounded-3xl">
             <CgBee />
-            The Busy Bee!
+            &nbsp; The Busy Bee!
           </button>
         </Link>
       </div>
