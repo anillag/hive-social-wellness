@@ -7,7 +7,8 @@ const TheBuzz = () => {
         <textarea
           placeholder="Tell the Hive what's on your mind..."
           className="buzz-text text-xs"
-        ></textarea>
+        ></textarea>{" "}
+        &nbsp;
         <button className="rounded-2xl buzz-button flex items-center justify-center ">
           Submit
         </button>

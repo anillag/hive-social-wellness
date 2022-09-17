@@ -6,7 +6,7 @@ const Nav = () => {
     <div>
       <nav>
         <section className="top-nav">
-          <div className="text-5xl px-6 py-3 text-[#f0c965]">
+          <div className="text-5xl px-6 py-3 text-[#f5f5f5]">
             <BiHive />
           </div>
 
