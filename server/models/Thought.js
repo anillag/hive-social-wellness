@@ -6,7 +6,7 @@ const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
-      required: "Your post can not be empty!",
+      required: "Your buzz can not be empty!",
       minlength: 1,
       maxlength: 280,
     },
