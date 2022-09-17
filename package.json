@@ -1,7 +1,6 @@
 {
   "name": "hive-social-wellness-root",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
@@ -21,5 +20,6 @@
   "homepage": "https://github.com/anillag/hive-social-wellness#readme",
   "devDependencies": {
     "concurrently": "^7.4.0"
-  }
+  },
+  "description": ""
 }

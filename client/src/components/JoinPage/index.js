@@ -9,7 +9,7 @@ export default function JoinPage() {
       <div className="absolute top-30 left-40 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
       <div className="absolute bottom-20 left-20 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
       <div className="absolute top-40 right-10 w-10 h-10 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[580px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
         <div className="w-full h-[580px] hidden md:block">
           <img className="w-full h-full" src={BeeButt} alt="/" />
@@ -17,26 +17,22 @@ export default function JoinPage() {
 
         <div className="p-5 flex flex-col justify-around">
           <div className="p-5 flex flex-col justify-around">
-            <form className="flex flex-col ">
-              <h2 className="text-4xl font-bold text-center mb-4 text-[#f0c965] ">
-                {" "}
-                WELCOME TO THE HIVE
-              </h2>
+            <form className="flex flex-col">
 
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN UP</h2>
               <div>
                 <input
-                  className="border p-2 m-2"
+                  className="border p-2 m-2 w-full"
                   type="text"
                   placeholder="username"
                 />
                 <input
-                  className="border p-2 m-2"
+                  className="border p-2 m-2 w-full"
                   type="password"
                   placeholder="password"
                 />
                 <input
-                  className="border p-2 m-2"
+                  className="border p-2 m-2 w-full"
                   type="text"
                   placeholder="email"
                 />
@@ -49,12 +45,12 @@ export default function JoinPage() {
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN IN</h2>
               <div>
                 <input
-                  className="border p-2 m-2"
+                  className="border p-2 m-2 w-full"
                   type="text"
                   placeholder="username"
                 />
                 <input
-                  className="border p-2 m-2"
+                  className="border p-2 m-2 w-full" 
                   type="password"
                   placeholder="password"
                 />
