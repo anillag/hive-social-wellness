@@ -7,7 +7,7 @@ const SplashPage = () => {
     <div name="splash" className="w-full h-screen bg-[#171718]">
       {/* WELCOME splash */}
       <div className="flex flex-col justify-center items-center w-full h-full">
-        <button className="text-9xl px-6 py-4 text-[#f0c965]">
+        <button className="text-9xl px-6 py-4 text-[#f5f5f5]">
           <a href="/">
             {" "}
             <BiHive />{" "}
