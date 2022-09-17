@@ -1,8 +1,46 @@
-import React from "react";
+import React, {useState} from "react";
 import BeeButt from "../assets/beebutt.jpg";
+import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
+
 
 export default function JoinPage() {
+  "?"
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, login, { error }] = useMutation(ADD_USER, LOGIN_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
+    
     <div className="w-full h-screen flex bg-[#171718] ">
      <div className="absolute top-40 right-40 w-60 h-60 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees ">  </div>
       <div className="absolute bottom-40 right-20 w-40 h-40 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
@@ -28,17 +66,34 @@ export default function JoinPage() {
                 />
                 <input
                   className="border p-2 m-2 w-full"
-                  type="password"
-                  placeholder="password"
+                  name="username"
+                  type="username"
+                  placeholder="username"
+                  id="username"
+                  value={formState.username}
+                  onChange={handleChange}
                 />
                 <input
                   className="border p-2 m-2 w-full"
-                  type="text"
+                  type="email"
                   placeholder="email"
+                  id="email"
+                  value={formState.email}
+                  onChange={handleChange}
                 />
+                <input
+                  className="border p-2 m-2 w-full"
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  id="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                
               </div>
 
-              <button className="mt-3 mb-4 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]">
+              <button type="submit" className="mt-3 mb-4 py-1 text-lg font-bold text-center text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]">
                 SIGN-UP
               </button>
 
@@ -50,7 +105,7 @@ export default function JoinPage() {
                   placeholder="username"
                 />
                 <input
-                  className="border p-2 m-2 w-full" 
+                  className="border p-2 m-2 w-full"
                   type="password"
                   placeholder="password"
                 />
