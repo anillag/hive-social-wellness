@@ -1,7 +1,13 @@
 import React from "react";
+import ThoughtForm from "../ThoughtForm";
 
 const TheBusyBee = () => {
-  return <div>TheBusyBee content goes here</div>;
+  return (
+    <div>
+      <ThoughtForm /> <br />
+      TheBusyBee content goes here
+    </div>
+  );
 };
 
 export default TheBusyBee;

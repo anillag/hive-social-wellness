@@ -6,6 +6,8 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+
 import Nav from "./components/Nav";
 import SplashPage from "./components/SplashPage";
 import JoinPage from "./components/JoinPage";
@@ -13,6 +15,9 @@ import TheBuzz from "./components/TheBuzz";
 import TheBusyBee from "./components/TheBusyBee";
 import TheHive from "./components/TheHive";
 import TheColony from "./components/TheColony";
+// import ThoughtList from "./components/ThoughtList";
+import Buzzings from "./components/Buzzings";
+import Bee from "./components/Bee";
 import NoMatch404 from "./components/NoMatch404";
 import Footer from "./components/Footer";
 import "./style.css";
@@ -21,8 +26,18 @@ const httpLink = createHttpLink({
   uri: "/graphql",
 });
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -44,6 +59,15 @@ function App() {
               {/* Journaling */}
               <Route path="/the-colony" element={<TheColony />} />{" "}
               {/* User Page */}
+              <Route path="/buzzings">
+                <Route path="/buzzings/:id" element={<Buzzings />} />
+                <Route path="" element={<Buzzings />} />
+              </Route>{" "}
+              {/* Single Post */}
+              <Route path="/bee">
+                <Route path=":username" element={<Bee />} />
+                <Route path="" element={<Bee />} />
+              </Route>
               <Route path="*" element={<NoMatch404 />} />
             </Routes>
             <Footer />

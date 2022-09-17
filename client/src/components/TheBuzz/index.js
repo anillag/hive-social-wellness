@@ -1,15 +1,15 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_THOUGHTS } from "../../utils/queries";
-import ThoughtList from "../ThoughtList";
+import ThoughtForm from "../ThoughtForm";
 
 const TheBuzz = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
   return (
-
     <div>
-      <div className=" hiveFlex">
+      <ThoughtForm />
+      {/* <div className=" hiveFlex">
         <form className="text-2xl px-6 py-3 text-[#222]">
           <textarea
             placeholder="Tell the Hive what's on your mind..."
@@ -27,7 +27,7 @@ const TheBuzz = () => {
             <ThoughtList thoughts={thoughts} title="Here's The Buzz..." />
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
