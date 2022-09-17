@@ -4,8 +4,12 @@ import BeeButt from "../assets/beebutt.jpg";
 export default function JoinPage() {
   return (
     <div className="w-full h-screen flex bg-[#171718] ">
-      <div className="bg-[#f0c965] rounded-full"> </div>
-
+     <div className="absolute top-40 right-40 w-60 h-60 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees ">  </div>
+      <div className="absolute bottom-40 right-20 w-40 h-40 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-30 left-40 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute bottom-20 left-20 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-40 right-10 w-10 h-10 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[580px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
         <div className="w-full h-[580px] hidden md:block">
           <img className="w-full h-full" src={BeeButt} alt="/" />
