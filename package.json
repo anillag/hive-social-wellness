@@ -1,0 +1,25 @@
+{
+  "name": "hive-social-wellness-root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anillag/hive-social-wellness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anillag/hive-social-wellness/issues"
+  },
+  "homepage": "https://github.com/anillag/hive-social-wellness#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
