@@ -2,19 +2,19 @@ import React, {useState} from "react";
 import BeeButt from "../assets/beebutt.jpg";
 import Auth from '../../utils/auth';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../utils/mutations';
+import { ADD_USER } from '../../utils/mutations';
 
 
 export default function JoinPage() {
-  "?"
+  // SIGN UP 
   const [formState, setFormState] = useState({
     username: '',
     email: '',
     password: '',
   });
-  const [addUser, login, { error }] = useMutation(ADD_USER, LOGIN_USER);
+  const [addUser] = useMutation(ADD_USER);
 
-  // update state based on form input changes
+  // update state based on form input changes CREATEUSER/SIGNUP
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -42,12 +42,6 @@ export default function JoinPage() {
   return (
     
     <div className="w-full h-screen flex bg-[#171718] ">
-     <div className="absolute top-40 right-40 w-60 h-60 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees ">  </div>
-      <div className="absolute bottom-40 right-20 w-40 h-40 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
-      <div className="absolute top-30 left-40 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
-      <div className="absolute bottom-20 left-20 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
-      <div className="absolute top-40 right-10 w-10 h-10 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[580px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
         <div className="w-full h-[580px] hidden md:block">
           <img className="w-full h-full" src={BeeButt} alt="/" />
@@ -55,15 +49,13 @@ export default function JoinPage() {
 
         <div className="p-5 flex flex-col justify-around">
           <div className="p-5 flex flex-col justify-around">
-            <form className="flex flex-col">
+            <form onSubmit={handleFormSubmit} className="flex flex-col">
 
-              <h2 className="text-2xl font-bold text-center mb-4"> SIGN UP</h2>
+              <p> JOIN THE POLLEN-NATION</p>
+              <h2 className="text-2xl font-bold text-center mb-4"> SIGN-UP </h2>
+        
               <div>
-                <input
-                  className="border p-2 m-2 w-full"
-                  type="text"
-                  placeholder="username"
-                />
+                
                 <input
                   className="border p-2 m-2 w-full"
                   name="username"
@@ -97,6 +89,7 @@ export default function JoinPage() {
                 SIGN-UP
               </button>
 
+              <p> YOU KNOW HOW WE BEE </p>
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN IN</h2>
               <div>
                 <input
@@ -111,7 +104,7 @@ export default function JoinPage() {
                 />
               </div>
               <button className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]">
-                SIGN-IN
+              SIGN IN
               </button>
             </form>
           </div>
