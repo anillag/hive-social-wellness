@@ -5,6 +5,20 @@ import { BiHive } from "react-icons/bi";
 const SplashPage = () => {
   return (
     <div name="splash" className="w-full h-screen bg-[#171718]">
+
+      {/* baby bee blurs */}
+      <div className="absolute bottom-40 right-40 w-60 h-60 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees ">  </div>
+      <div className="absolute bottom-40 right-20 w-40 h-40 rounded-full bg-[#e1e0d6] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-60 left-80 w-10 h-10 rounded-full bg-[#e1e0d6] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute bottom-80 left-20 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-30 left-10 w-20 h-20 rounded-full bg-[#e1e0d6] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-20 right-60 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-80 right-80 w-20 h-20 rounded-full bg-[#e1e0d6] filter blur-xl opacity-50 animate-bees">  </div>
+
+      <div className="absolute bottom-20 left-20 w-20 h-20 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+      <div className="absolute top-40 right-10 w-10 h-10 rounded-full bg-[#f0c965] filter blur-xl opacity-50 animate-bees">  </div>
+
+
       {/* WELCOME splash */}
       <div className="flex flex-col justify-center items-center w-full h-full">
         <button className="text-9xl px-6 py-4 text-[#f5f5f5]">
