@@ -1,9 +1,48 @@
-import React from 'react'
+import {gql} from '@apollo/client'
 
-const queries = () => {
-  return (
-    <div>queries</div>
-  )
-}
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      friendCount
+      friends {
+        _id
+        username
+      }
+      thoughts {
+        _id
+        thoughtText
+        createdAt
+        reactionCount
+      }
+    }
+  }
+`;
 
-export default queries
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      friendCount
+      }
+      friends {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const QUERY_ME_BASIC = gql`
+  {
+    me {
+      _id
+      username
+      friendCount
+    }
+  }
+`;
