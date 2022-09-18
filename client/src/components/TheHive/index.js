@@ -1,6 +1,6 @@
 import React from "react";
 import { GiTreeBeehive } from "react-icons/gi";
-import { GiHoneycomb } from "react-icons/gi";
+import { GiHoneycomb, GiDrippingHoney } from "react-icons/gi";
 import { CgBee } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
@@ -31,6 +31,7 @@ const TheHive = () => {
           </button>
         </Link>
       </div>
+      <GiDrippingHoney className="honey" />
     </div>
   );
 };

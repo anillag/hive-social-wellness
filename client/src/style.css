@@ -94,6 +94,15 @@ body {
   transform: rotate(-405deg);
 }
 
+.honey {
+  size: 200%;
+  height: 500px;
+  width: 500px;
+  align-content: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
 .hiveFlex {
   text-align: center;
   background-image: url(./components/assets/hivebackground.png);
