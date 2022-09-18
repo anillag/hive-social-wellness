@@ -6,10 +6,16 @@ import ThoughtList from "../ThoughtList";
 
 const TheBuzz = () => {
   return (
-    <div>
-      <ThoughtForm />
+    <div className="hiveFlex">
+      <div className="flex justify-center">
+        {" "}
+        <ThoughtForm />
+      </div>
       <br />
-      <ThoughtList />
+      <div className="flex justify-center max-h-1">
+        {" "}
+        <ThoughtList />
+      </div>
       {/* <div className=" hiveFlex">
         <form className="text-2xl px-6 py-3 text-[#222]">
           <textarea

@@ -20,6 +20,11 @@ import Buzzings from "./components/Buzzings";
 import Bee from "./components/Bee";
 import NoMatch404 from "./components/NoMatch404";
 import Footer from "./components/Footer";
+import Links from "./pages/Links";
+import Contact from "./pages/Contact";
+import Devs from "./pages/Devs";
+import Donation from "./pages/Donation";
+import ComingSoon from "./pages/ComingSoon";
 import "./style.css";
 
 const httpLink = createHttpLink({
@@ -69,6 +74,10 @@ function App() {
                 <Route path="" element={<Bee />} />
               </Route>
               <Route path="*" element={<NoMatch404 />} />
+              <Route path="/links" element={<Links />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/devs" element={<Devs />} />
+              <Route path="/donation" element={<ComingSoon />} />
             </Routes>
             <Footer />
           </Router>
