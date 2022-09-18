@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import Auth from "../../utils/auth";
 
-const ThoughtList = ({ thoughts, title }) => {
+import { QUERY_THOUGHTS, QUERY_ME_BASIC } from "../../utils/queries";
+
+const ThoughtList = ({ title }) => {
+  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { data: userData } = useQuery(QUERY_ME_BASIC);
+  const thoughts = data?.thoughts || [];
+
+  const loggedIn = Auth.loggedIn();
+
   if (!thoughts.length) {
     return <h3>No Buzzings Yet</h3>;
   }
