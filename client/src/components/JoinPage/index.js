@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import BeeButt from "../assets/beebutt.jpg";
+//import BeeButt from "../assets/beebutt.jpg";
+import BeeYellow from "../assets/beeyellow.jpg"
 import Auth from '../../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER, LOGIN_USER } from '../../utils/mutations';
@@ -66,17 +67,18 @@ export default function JoinPage() {
   return (
     
     <div className="w-full h-screen flex bg-[#171718] ">
-      <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[680px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto w-full h-[680px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
         <div className="w-full h-[680px] hidden md:block">
-          <img className="w-full h-full" src={BeeButt} alt="/" />
+          <img className="w-full h-full" src={BeeYellow} alt="/" />
         </div>
 
         <div className="p-5 flex flex-col justify-around">
           <div className="p-5 flex flex-col justify-around">
             <form onSubmit={handleFormSubmit} className="flex flex-col">
            
-            <p> JOIN THE POLLEN-NATION</p>
+            <p className="text-center" > JOIN THE POLLEN-NATION</p>
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN-UP </h2>
+              
               <div>
                 
                 <input
@@ -115,7 +117,7 @@ export default function JoinPage() {
               </form> 
 
               <form onSubmit={handleFormSubmit2} className="flex flex-col">
-              <p> YOU KNOW HOW WE BEE </p>
+              <p className="text-center" > YOU KNOW HOW WE BEE </p>
 
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN IN</h2>
               <div>
