@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 //import BeeButt from "../assets/beebutt.jpg";
 import BeeYellow from "../assets/beeyellow.jpg"
 import Auth from '../../utils/auth';
@@ -132,7 +133,7 @@ export default function JoinPage() {
                 />
                   <input
                   className="form-input border p-2 m-2 w-full"
-                  type="userpass"
+                  type="password"
                   name="userpass"
                   placeholder="password"
                   id="userpass"
@@ -141,7 +142,8 @@ export default function JoinPage() {
                 />
               </div>
               <button type="submit" className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]">
-              SIGN IN
+              <Link to= '/the-hive'>  SIGN IN</Link>
+
               </button>
             </form>            
 
