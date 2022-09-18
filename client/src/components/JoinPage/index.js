@@ -67,7 +67,7 @@ export default function JoinPage() {
   return (
     
     <div className="w-full h-screen flex bg-[#171718] ">
-      <div className="grid grid-cols-1 md:grid-cols-2 m-auto w-full h-[680px] sm:max-w-[1000px] shadow-lg shadow-[#484848] bg-[#f5f5f5]">
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto w-full h-[680px] sm:max-w-[1000px] shadow-2xl shadow-[#585757] bg-[#f5f5f5]">
         <div className="w-full h-[680px] hidden md:block">
           <img className="w-full h-full" src={BeeYellow} alt="/" />
         </div>
@@ -76,7 +76,7 @@ export default function JoinPage() {
           <div className="p-5 flex flex-col justify-around">
             <form onSubmit={handleFormSubmit} className="flex flex-col">
            
-            <p className="text-center" > JOIN THE POLLEN-NATION</p>
+            <p className="text-center  text-[#7e7e7e] " > JOIN THE POLLEN-NATION</p>
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN-UP </h2>
               
               <div>
@@ -117,7 +117,7 @@ export default function JoinPage() {
               </form> 
 
               <form onSubmit={handleFormSubmit2} className="flex flex-col">
-              <p className="text-center" > YOU KNOW HOW WE BEE </p>
+              <p className="text-center text-[#7e7e7e]" > YOU KNOW HOW WE BEE </p>
 
               <h2 className="text-2xl font-bold text-center mb-4"> SIGN IN</h2>
               <div>
