@@ -2,13 +2,14 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_THOUGHTS } from "../../utils/queries";
 import ThoughtForm from "../ThoughtForm";
+import ThoughtList from "../ThoughtList";
 
 const TheBuzz = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
   return (
     <div>
       <ThoughtForm />
+      <br />
+      <ThoughtList />
       {/* <div className=" hiveFlex">
         <form className="text-2xl px-6 py-3 text-[#222]">
           <textarea
