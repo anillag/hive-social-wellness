@@ -31,7 +31,10 @@ const TheHive = () => {
           </button>
         </Link>
       </div>
-      <GiDrippingHoney className="honey" />
+      <div>
+        {" "}
+        <GiDrippingHoney className="honey" />{" "}
+      </div>
     </div>
   );
 };

@@ -7,8 +7,10 @@ const TheBuzz = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
   return (
-    <div>
-      <ThoughtForm />
+    <div className=" hiveFlex">
+      <div className="">
+        <ThoughtForm />
+      </div>
       {/* <div className=" hiveFlex">
         <form className="text-2xl px-6 py-3 text-[#222]">
           <textarea
