@@ -8,22 +8,22 @@ const Footer = () => {
       <div className="text-center py-6">
         <button className="transform hover:rotate-90 text-3xl px-6 text-[#f0c965]">
           <a href="/">
-            {" "}
-            <AiOutlineLink />{" "}
+            
+            <AiOutlineLink />
+          </a>
+        </button>
+
+        <button className="transform hover:rotate-180 text-3xl px-6 text-[#f0c965]">
+          <a href="https://github.com/anillag/hive-social-wellness">
+           
+            <AiOutlineGithub />
           </a>
         </button>
 
         <button className="transform hover:rotate-180 text-3xl px-6 text-[#f0c965]">
           <a href="/">
-            {" "}
-            <AiOutlineGithub />{" "}
-          </a>
-        </button>
-
-        <button className="transform hover:rotate-180 text-3xl px-6 text-[#f0c965]">
-          <a href="/">
-            {" "}
-            <AiOutlineMail />{" "}
+            
+            <AiOutlineMail />
           </a>
         </button>
 
