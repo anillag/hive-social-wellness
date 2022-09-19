@@ -9,22 +9,22 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./components/Nav";
-import SplashPage from "./components/SplashPage";
-import JoinPage from "./components/JoinPage";
-import TheBuzz from "./components/TheBuzz";
-import TheBusyBee from "./components/TheBusyBee";
-import TheHive from "./components/TheHive";
-import TheColony from "./components/TheColony";
+import SplashPage from "./pages/SplashPage";
+import JoinPage from "./pages/JoinPage";
+import TheBuzz from "./pages/TheBuzz";
+import TheBusyBee from "./pages/TheBusyBee";
+import TheHive from "./pages/TheHive";
+import TheColony from "./pages/TheColony";
 // import ThoughtList from "./components/ThoughtList";
-import Buzzings from "./components/Buzzings";
-import Bee from "./components/Bee";
-import NoMatch404 from "./components/NoMatch404";
+import Buzzings from "./pages/Buzzings";
+import Bee from "./pages/Bee";
 import Footer from "./components/Footer";
 import Links from "./pages/Links";
 import Contact from "./pages/Contact";
 import Devs from "./pages/Devs";
 import Donation from "./pages/Donation";
 import ComingSoon from "./pages/ComingSoon";
+import NoMatch404 from "./pages/NoMatch404";
 import "./style.css";
 
 const httpLink = createHttpLink({
@@ -73,11 +73,11 @@ function App() {
                 <Route path=":username" element={<Bee />} />
                 <Route path="" element={<Bee />} />
               </Route>
-              <Route path="*" element={<NoMatch404 />} />
               <Route path="/links" element={<Links />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/devs" element={<Devs />} />
               <Route path="/donation" element={<ComingSoon />} />
+              <Route path="*" element={<NoMatch404 />} />
             </Routes>
             <Footer />
           </Router>

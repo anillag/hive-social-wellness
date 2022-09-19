@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BiHive } from "react-icons/bi";
+
 const Nav = () => {
   return (
     <div>

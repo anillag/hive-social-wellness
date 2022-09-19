@@ -134,7 +134,7 @@ body {
 
 .hiveFlex {
   text-align: center;
-  background-image: url(./components/assets/hivebackground.png);
+  background-image: url(./assets/hivebackground.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

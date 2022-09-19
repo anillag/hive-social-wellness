@@ -9,7 +9,9 @@ import Auth from "../../utils/auth";
 const FriendList = ({ friendCount, username, friends }) => {
   if (!friends || !friends.length) {
     return (
-      <p className="bg-dark text-light p-3">{username}, Bee-friend someone!</p>
+      <p className="bg-dark text-light p-3">
+        {`${username}`}, bee-friend someone!
+      </p>
     );
   }
 

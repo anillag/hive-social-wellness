@@ -6,7 +6,7 @@ import { ADD_FRIEND } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
 import FriendList from "../FriendList";
-import ThoughtForm from "../ThoughtForm";
+import ThoughtList from "../ThoughtList";
 
 const TheColony = (props) => {
   const { username: userParam } = useParams();
@@ -18,7 +18,6 @@ const TheColony = (props) => {
 
   const user = data?.me || data?.user || {};
 
-  // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/bee:username" />;
   }
@@ -27,9 +26,9 @@ const TheColony = (props) => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
-    return <h4>You need to be logged in!</h4>;
-  }
+  // if (!user?.username) {
+  //   return <h4>You need to be logged in!</h4>;
+  // }
 
   const handleClick = async () => {
     try {
@@ -45,7 +44,7 @@ const TheColony = (props) => {
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Bee profile for {user.username}
+          Bee profile for {`${user.username}`}
         </h2>
 
         {userParam && (
@@ -55,9 +54,16 @@ const TheColony = (props) => {
         )}
       </div>
       <br />
-      <ThoughtForm />
+      <FriendList
+        username={user.username}
+        friendCount={user.friendCount}
+        friends={user.friends}
+      />
       <br />
-      <FriendList />
+      <ThoughtList
+        thoughts={user.thoughts}
+        title={`${user.username}'s buzzings:`}
+      />
     </div>
   );
 };
