@@ -91,6 +91,38 @@ body {
   transform: rotate(-405deg);
 }
 
+.buzzP {
+  background-image: linear-gradient(to left, #f0c965, #faab3d);
+  padding: 15px;
+  border-color: #f0c965;
+  box-shadow: 5px 5px #333;
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "userName date date"
+    "reaction reaction reaction"
+    "buzz buzz buzz";
+  gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.userNameDiv {
+  grid-area: userName;
+}
+.dateDiv {
+  grid-area: date;
+}
+.buzzDiv {
+  grid-area: buzz;
+}
+.reactionDiv {
+  grid-area: reaction;
+}
+
 .honey {
   size: 200%;
   height: 500px;

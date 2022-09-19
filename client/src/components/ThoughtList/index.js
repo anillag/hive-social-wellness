@@ -21,25 +21,31 @@ const ThoughtList = ({ title }) => {
       <h3>{title}</h3>
       {thoughts &&
         thoughts.map((thought) => (
-          <div key={thought._id} className="card mb-3">
-            <p className="card-header">
-              <Link
-                to={`/bee/${thought.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-light"
-              >
-                {thought.username}
-              </Link>{" "}
-              thought on {thought.createdAt}
-            </p>
-            <div className="card-body">
+          <div
+            key={thought._id}
+            className="card mb-3 buzzP rounded-3xl max-w-lg grid-container "
+          >
+            <div className="userNameDiv">
+              {" "}
+              <p className="card-header">
+                <Link
+                  to={`/bee/${thought.username}`}
+                  style={{ fontWeight: 700 }}
+                  className="text-light"
+                >
+                  {thought.username}
+                </Link>
+                <br />
+              </p>
+            </div>
+            <div classname="dateDiv"> {thought.createdAt}</div>
+            <div className="card-body buzzDiv">
               <Link to={`/buzzings/${thought._id}`}>
                 <p>{thought.thoughtText}</p>
-                <p className="mb-0">
-                  Reactions: {thought.reactionCount} || Click to{" "}
-                  {thought.reactionCount ? "see" : "start"} the discussion!
-                </p>
               </Link>
+            </div>
+            <div classname="reactionDiv">
+              <p className="mb-0">Reactions: {thought.reactionCount}</p>
             </div>
           </div>
         ))}
