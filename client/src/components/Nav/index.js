@@ -7,7 +7,9 @@ const Nav = () => {
       <nav>
         <section className="top-nav">
           <div className="text-5xl px-6 py-3 text-[#f5f5f5]">
-            <BiHive />
+            <Link to="/join">
+              <BiHive />
+            </Link>
           </div>
 
           <input id="menu-toggle" type="checkbox" />
