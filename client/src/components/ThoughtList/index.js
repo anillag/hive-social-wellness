@@ -38,13 +38,13 @@ const ThoughtList = ({ title }) => {
                 <br />
               </p>
             </div>
-            <div classname="dateDiv"> thought on {thought.createdAt}</div>
+            <div className="dateDiv"> thought on {thought.createdAt}</div>
             <div className="card-body buzzDiv">
               <Link to={`/buzzings/${thought._id}`}>
                 <p>{thought.thoughtText}</p>
               </Link>
             </div>
-            <div classname="reactionDiv">
+            <div className="reactionDiv">
               <Link to={`/buzzings/${thought._id}`}>
                 <p className="mb-0">
                   Reactions: {thought.reactionCount} || Click to{" "}
