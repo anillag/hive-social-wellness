@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BiHive } from "react-icons/bi";
+import Auth from "../../utils/auth";
 
 const Nav = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
     <div>
       <nav>
@@ -11,6 +17,19 @@ const Nav = () => {
             <Link to="/join">
               <BiHive />
             </Link>
+            <div className="text-1xl">
+              {Auth.loggedIn() ? (
+                <>
+                  <Link to="/" onClick={logout}>
+                    Logout
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/join">Join</Link>
+                </>
+              )}
+            </div>
           </div>
 
           <input id="menu-toggle" type="checkbox" />
