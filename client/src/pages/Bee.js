@@ -20,7 +20,6 @@ const Bee = (props) => {
 
   const user = data?.me || data?.user || {};
 
-  // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/bee/:username" />;
   }
@@ -61,7 +60,7 @@ const Bee = (props) => {
         <div className="col-12 mb-3 col-lg-8">
           <ThoughtList
             thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
+            title={`${user.username}'s buzzings...`}
           />
         </div>
 

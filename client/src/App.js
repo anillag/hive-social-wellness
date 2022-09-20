@@ -23,6 +23,7 @@ import Contact from "./pages/Contact";
 import Devs from "./pages/Devs";
 import Donation from "./pages/Donation";
 import ComingSoon from "./pages/ComingSoon";
+import PrivateRoutes from "./components/PrivateRoutes";
 import NoMatch404 from "./pages/NoMatch404";
 import "./style.css";
 
@@ -56,21 +57,24 @@ function App() {
               <Route path="/" element={<SplashPage />} />
               <Route path="/join" element={<JoinPage />} />{" "}
               {/* Join / Signup */}
-              <Route path="/the-hive" element={<TheHive />} />{" "}
-              {/* Main Page / Dashboard */}
-              <Route path="/the-buzz" element={<TheBuzz />} /> {/* Newsfeed */}
-              <Route path="/the-busy-bee" element={<TheBusyBee />} />{" "}
-              {/* Journaling */}
-              <Route path="/the-colony" element={<TheColony />} />{" "}
-              {/* User Page */}
-              <Route path="/buzzings">
-                <Route path="/buzzings/:id" element={<Buzzings />} />
-                <Route path="" element={<Buzzings />} />
-              </Route>{" "}
-              {/* Single Post */}
-              <Route path="/bee">
-                <Route path=":username" element={<Bee />} />
-                <Route path="" element={<Bee />} />
+              <Route element={<PrivateRoutes />}>
+                <Route path="/the-hive" element={<TheHive />} />{" "}
+                {/* Main Page / Dashboard */}
+                <Route path="/the-buzz" element={<TheBuzz />} />{" "}
+                {/* Newsfeed */}
+                <Route path="/the-busy-bee" element={<TheBusyBee />} />{" "}
+                {/* Journaling */}
+                <Route path="/the-colony" element={<TheColony />} />{" "}
+                {/* User Page */}
+                <Route path="/buzzings">
+                  <Route path="/buzzings/:id" element={<Buzzings />} />
+                  <Route path="" element={<Buzzings />} />
+                </Route>{" "}
+                {/* Single Post */}
+                <Route path="/bee">
+                  <Route path="/bee/:username" element={<Bee />} />
+                  <Route path="" element={<Bee />} />
+                </Route>
               </Route>
               <Route path="/links" element={<Links />} />
               <Route path="/contact" element={<Contact />} />
