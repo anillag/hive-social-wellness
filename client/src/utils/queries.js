@@ -98,3 +98,21 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+export const QUERY_TODO = gql`
+  {
+    todo {
+      _id
+      todoItem
+    }
+  }
+`;
+
+export const QUERY_TODOS = gql`
+  {
+    todos {
+      _id
+      todoItem
+    }
+  }
+`;

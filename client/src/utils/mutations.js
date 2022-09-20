@@ -80,3 +80,21 @@ export const REMOVE_FRIEND = gql`
     }
   }
 `;
+
+export const ADD_TODO = gql`
+  mutation addTodo($todoItem: String!) {
+    addTodo(todoItem: $todoItem) {
+      _id
+      todoItem
+    }
+  }
+`;
+
+export const REMOVE_TODO = gql`
+  mutation removeTodo($_id: ID!) {
+    removeTodo(_id: $_id) {
+      _id
+      todoItem
+    }
+  }
+`;

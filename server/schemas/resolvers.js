@@ -1,4 +1,4 @@
-const { User, Thought } = require("../models");
+const { User, Thought, Todos } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -23,6 +23,17 @@ const resolvers = {
         .populate("friends")
         .populate("thoughts");
     },
+    todos: async (parent, args, context) => {
+      if (context.user) {
+        return Todos.find({}).populate("todos");
+      }
+    },
+    todo: async (parent, { _id }) => {
+      if (context.user) {
+        return Todos.findOne({ _id }).populate("todos");
+      }
+    },
+
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
@@ -110,6 +121,32 @@ const resolvers = {
       }
 
       throw new AuthenticationError("Not logged in");
+    },
+    addTodo: async (parent, args, context) => {
+      if (context.user) {
+        const todo = await Todos.create({
+          ...args,
+        });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { todos: todo._id } },
+          { new: true }
+        );
+
+        return todo;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+    removeTodo: async (parent, args, context) => {
+      if (context.user) {
+        const todo = await Todos.findOneAndDelete(
+          { _id: args._id },
+          { ...args }
+        );
+        return todo;
+      }
     },
   },
 };

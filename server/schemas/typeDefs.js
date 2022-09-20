@@ -8,6 +8,7 @@ const typeDefs = gql`
     friendCount: Int
     thoughts: [Thought]
     friends: [User]
+    todos: [Todos]
   }
 
   type Thought {
@@ -26,12 +27,20 @@ const typeDefs = gql`
     username: String
   }
 
+  type Todos {
+    _id: ID
+    todoItem: String
+    createdAt: String
+  }
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     thoughts(username: String): [Thought]
     thought(_id: ID!): Thought
+    todos: [Todos]
+    todo: Todo
   }
 
   type Mutation {
@@ -40,6 +49,8 @@ const typeDefs = gql`
     addThought(thoughtText: String!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
+    addTodo(todoItem: String!): Todos
+    removeTodo(_id: ID!): Todos
   }
 
   type Auth {
