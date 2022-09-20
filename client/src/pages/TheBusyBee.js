@@ -28,10 +28,9 @@ const TheBusyBee = () => {
 
   return (
     <div className="hiveFlex">
-      <ThoughtForm />
       <div className=" w-full p-5 flex justify-center">
         <div className="w-1/2 flex-row justify-center">
-          <div className="w-full flex justify-end">
+          <div className="w-full flex justify-center">
             <button
               className="buzz-button rounded-3xl"
               type="button"
