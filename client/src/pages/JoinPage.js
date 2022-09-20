@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 //import BeeButt from "../assets/beebutt.jpg";
 import BeeYellow from "../assets/beeyellow.jpg";
 import Auth from "../utils/auth";
@@ -14,8 +14,17 @@ export default function JoinPage() {
     password: "",
   });
 
+  const [singupForm, setSignupForm] = useState({
+    email: "",
+    password: "",
+  });
+
+
+  const navigate = useNavigate() 
+
   //Log-in & Error
-  const [addUser, login] = useMutation(ADD_USER, LOGIN_USER);
+  const [login] = useMutation(LOGIN_USER);
+  const [addUser] = useMutation(ADD_USER);
 
   // update state based on form input changes CREATEUSER/SIGNUP
   const handleChange = (event) => {
@@ -23,6 +32,15 @@ export default function JoinPage() {
 
     setFormState({
       ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleChange2 = (event) => {
+    const { name, value } = event.target;
+
+    setSignupForm({
+      ...singupForm,
       [name]: value,
     });
   };
@@ -48,18 +66,21 @@ export default function JoinPage() {
 
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: { ...singupForm },
       });
 
       Auth.login(data.login.token);
+      if (data.login.token){
+        navigate("/the-hive")
+      }
     } catch (e) {
       console.error(e);
     }
 
     // clear form values
-    setFormState({
-      userid: "",
-      userpass: "",
+    setSignupForm({
+      email: "",
+      password: "",
     });
   };
 
@@ -83,7 +104,7 @@ export default function JoinPage() {
                 <input
                   className="form-input border p-2 m-2 w-full"
                   name="username"
-                  type="username"
+                  type="text"
                   placeholder="username"
                   id="username"
                   value={formState.username}
@@ -93,7 +114,7 @@ export default function JoinPage() {
                   className="form-input border p-2 m-2 w-full"
                   placeholder="Your email"
                   name="email"
-                  type="email"
+                  type="text"
                   id="email"
                   value={formState.email}
                   onChange={handleChange}
@@ -128,27 +149,27 @@ export default function JoinPage() {
                 <input
                   className="form-input border p-2 m-2 w-full"
                   type="text"
-                  name="userid"
-                  id="userid"
-                  placeholder="username"
-                  value={formState.userid}
-                  onChange={handleChange}
+                  name="email"
+                  id="email"
+                  placeholder="email"
+                  value={singupForm.email}
+                  onChange={handleChange2}
                 />
                 <input
                   className="form-input border p-2 m-2 w-full"
                   type="password"
-                  name="userpass"
+                  name="password"
                   placeholder="password"
-                  id="userpass"
-                  value={formState.userpass}
-                  onChange={handleChange}
+                  id="password"
+                  value={singupForm.password}
+                  onChange={handleChange2}
                 />
               </div>
               <button
                 type="submit"
                 className="mt-3 py-1 text-lg font-bold text-[#171718] border-4 rounded-3xl border-[#171718] px-6 my-2 flex items-center hover:bg-[#171718] hover:text-[#f0c965]"
               >
-                <Link to="/the-hive"> SIGN IN</Link>
+                SIGN IN
               </button>
             </form>
           </div>
