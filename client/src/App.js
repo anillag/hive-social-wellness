@@ -15,7 +15,6 @@ import TheBuzz from "./pages/TheBuzz";
 import TheBusyBee from "./pages/TheBusyBee";
 import TheHive from "./pages/TheHive";
 import TheColony from "./pages/TheColony";
-// import ThoughtList from "./components/ThoughtList";
 import Buzzings from "./pages/Buzzings";
 import Bee from "./pages/Bee";
 import Footer from "./components/Footer";

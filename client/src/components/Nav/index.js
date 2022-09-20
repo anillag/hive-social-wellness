@@ -17,7 +17,7 @@ const Nav = () => {
             <Link to="/join">
               <BiHive />
             </Link>
-            <div className="text-1xl">
+            <span>
               {Auth.loggedIn() ? (
                 <>
                   <Link to="/" onClick={logout}>
@@ -29,7 +29,7 @@ const Nav = () => {
                   <Link to="/join">Join</Link>
                 </>
               )}
-            </div>
+            </span>
           </div>
 
           <input id="menu-toggle" type="checkbox" />
