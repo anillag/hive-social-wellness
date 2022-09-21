@@ -4,6 +4,13 @@
 
 To create a social app that will hold users responsible for their health and overall wellbeing 
 
+## Technolgies Used
+
+    HTML, TAILWINDCSS, JavaScript, bcrypt
+    JWT, dotenv,
+    express, express.js,
+    GraphQL, Node.js, Mongoose ODM, MongoDB
+
 # Goals 
 - [x] Use React for the front end.
 - [x] Use GraphQL with a Node.js and Express.js server.
@@ -49,17 +56,9 @@ To create a social app that will hold users responsible for their health and ove
 
 
 
-## Website
+## Website Link
 
 
-
-
-## Technolgies Used
-
-    HTML, TAILWINDCSS, JavaScript, bcrypt
-    JWT, dotenv,
-    express, express.js,
-    GraphQL, Node.js, Mongoose ODM, MongoDB
 
 
 
