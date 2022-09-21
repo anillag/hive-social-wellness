@@ -1,8 +1,6 @@
 import React from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
-import ThoughtForm from "../components/ThoughtForm";
-import ThoughtList from "../components/ThoughtList";
 import FriendList from "../components/FriendList";
 
 import { useQuery, useMutation } from "@apollo/client";
@@ -11,17 +9,17 @@ import { ADD_FRIEND } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Bee = (props) => {
-  const { username: userParam } = useParams();
-
+  const { username } = useParams();
+  const navigate = useNavigate();
   const [addFriend] = useMutation(ADD_FRIEND);
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam },
+  const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
+    variables: { username: username },
   });
 
   const user = data?.me || data?.user || {};
 
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/bee/:username" />;
+  if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
+    navigate(`/bee/${Auth.getProfile().data.username}`);
   }
 
   if (loading) {
@@ -44,26 +42,23 @@ const Bee = (props) => {
 
   return (
     <div>
-      <div className="flex-row mb-3">
+      <div>
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : "your"} profile.
+          Viewing {username ? `${user.username}'s` : "your"} profile.
         </h2>
-
-        {userParam && (
-          <button className="btn ml-auto" onClick={handleClick}>
-            Add Friend
-          </button>
-        )}
+        <div className="w-full justify-center">
+          {username && (
+            <button
+              className="mt-7 py-3 text-lg font-bold text-[#f0c965] border-4 rounded-2xl border-[#f0c965] px-6 my-2 flex items-center hover:bg-[#f0c965] hover:text-[#3e3e40]"
+              onClick={handleClick}
+            >
+              Add Friend
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">
-          <ThoughtList
-            thoughts={user.thoughts}
-            title={`${user.username}'s buzzings...`}
-          />
-        </div>
-
         <div className="col-12 col-lg-3 mb-3">
           <FriendList
             username={user.username}
@@ -72,7 +67,6 @@ const Bee = (props) => {
           />
         </div>
       </div>
-      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };

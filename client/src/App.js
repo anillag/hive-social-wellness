@@ -21,7 +21,6 @@ import Footer from "./components/Footer";
 import Links from "./pages/Links";
 import Contact from "./pages/Contact";
 import Devs from "./pages/Devs";
-import Donation from "./pages/Donation";
 import ComingSoon from "./pages/ComingSoon";
 import PrivateRoutes from "./components/PrivateRoutes";
 import NoMatch404 from "./pages/NoMatch404";

@@ -1,10 +1,5 @@
 import React from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
-
-import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_USER, QUERY_ME } from "../../utils/queries";
-import { ADD_FRIEND } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import { Link } from "react-router-dom";
 
 const FriendList = ({ friendCount, username, friends }) => {
   if (!friends || !friends.length) {
@@ -20,11 +15,16 @@ const FriendList = ({ friendCount, username, friends }) => {
       <h5>
         {username}'s {friendCount} {friendCount === 1 ? "friend" : "friends"}
       </h5>
-      {friends.map((friend) => (
-        <button key={friend._id}>
-          <Link to={`/bee/${friend.username}`}>{friend.username}</Link>
-        </button>
-      ))}
+      <div className="flex items-center">
+        {friends.map((friend) => (
+          <button
+            className="mt-7 py-3 text-lg font-bold text-[#f0c965] border-4 rounded-2xl border-[#f0c965] px-6 my-2 flex items-center hover:bg-[#f0c965] hover:text-[#3e3e40]"
+            key={friend._id}
+          >
+            <Link to={`/bee/${friend.username}`}>{friend.username}</Link>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
