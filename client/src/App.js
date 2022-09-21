@@ -57,23 +57,6 @@ function App() {
               <Route path="/" element={<SplashPage />} />
               <Route path="/join" element={<JoinPage />} />{" "}
               {/* Join / Signup */}
-<<<<<<< HEAD
-              <Route path="/the-hive" element={<TheHive />} />{" "}
-              {/* Main Page / Dashboard */}
-              <Route path="/the-buzz" element={<TheBuzz />} /> {/* Newsfeed */}
-              <Route path="/the-busy-bee" element={<TheBusyBee />} />{" "}
-              {/* Journaling */}
-              <Route path="/the-colony" element={<TheColony />} />{" "}
-              {/* User Page */}
-              <Route path="/buzzings">
-                <Route path="/buzzings/:id" element={<Buzzings />} />
-                <Route path="" element={<Buzzings />} />
-              </Route>{" "}
-              {/* Single Post */}
-              <Route path="/bee" element={<Bee />}>
-                <Route path="/bee/:username" element={<Bee />} />
-                <Route path="" />
-=======
               <Route element={<PrivateRoutes />}>
                 <Route path="/the-hive" element={<TheHive />} />{" "}
                 {/* Main Page / Dashboard */}
@@ -92,7 +75,6 @@ function App() {
                   <Route path="/bee/:username" element={<Bee />} />
                   <Route path="" element={<Bee />} />
                 </Route>
->>>>>>> e9b157600cf2b919d59e75aca1573c727159ceb3
               </Route>
               <Route path="/links" element={<Links />} />
               <Route path="/contact" element={<Contact />} />
