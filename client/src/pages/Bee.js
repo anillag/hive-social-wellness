@@ -1,26 +1,20 @@
 import React from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import FriendList from "../components/FriendList";
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { ADD_FRIEND } from "../utils/mutations";
-import Auth from "../utils/auth";
 
 const Bee = (props) => {
   const { username } = useParams();
-  const navigate = useNavigate();
   const [addFriend] = useMutation(ADD_FRIEND);
   const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
     variables: { username: username },
   });
 
   const user = data?.me || data?.user || {};
-
-  if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
-    navigate(`/bee/${Auth.getProfile().data.username}`);
-  }
 
   if (loading) {
     return <div>Loading...</div>;
