@@ -13,20 +13,35 @@ const Nav = () => {
     <div>
       <nav>
         <section className="top-nav">
-          <div className="text-5xl px-6 py-3 text-[#f5f5f5]">
-            <Link to="/join">
-              <BiHive />
-            </Link>
-            <div className="text-1xl">
+          <div className="text-5xl px-6 py-3 text-[#f5f5f5] flex">
+            <Link to="/join"></Link>
+            <div>
               {Auth.loggedIn() ? (
                 <>
-                  <Link to="/" onClick={logout}>
-                    Logout
+                  <Link
+                    to="/"
+                    onClick={logout}
+                    className="text-5xl px-6 py-3 text-[#f5f5f5] flex"
+                  >
+                    <BiHive />
+                    &nbsp;{" "}
+                    <span className="text-lg align-middle justify-center p-2 text-[#333]">
+                      Logout
+                    </span>
                   </Link>
                 </>
               ) : (
                 <>
-                  <Link to="/join">Join</Link>
+                  <Link
+                    to="/join"
+                    className="text-5xl px-6 py-3 text-[#f5f5f5] flex"
+                  >
+                    <BiHive />
+                    &nbsp;
+                    <span className="text-lg align-middle justify-center p-2 text-[#333]">
+                      Join
+                    </span>
+                  </Link>
                 </>
               )}
             </div>

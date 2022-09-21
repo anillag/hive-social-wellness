@@ -1,88 +1,167 @@
+import { useMutation, useQuery } from "@apollo/client";
 import React, { useState } from "react";
-import Item from "../components/Item";
+// import Item from "../components/Item";
+import List from "../components/List";
+import { ADD_TODO, REMOVE_TODO } from "../utils/mutations";
+import { QUERY_TODOS } from "../utils/queries";
 
-class TheBusyBee extends React.Component {
-  state = {
-    input: "",
-    items: ["Meditate", "Finish one chapter", "Do some cardio"],
+const TheBusyBee = () => {
+  const [inputForm, setInputForm] = useState("");
+
+  const [addTodo, { error }] = useMutation(ADD_TODO);
+  const [removeTodo] = useMutation(REMOVE_TODO);
+
+  const { data, loading } = useQuery(QUERY_TODOS);
+  console.log(data?.todos);
+  const handleInput = (event) => {
+    setInputForm(event.target.value);
   };
 
-  constructor(props) {
-    super(props);
-
-    this.addItem = this.addItem.bind(this);
-    this.removeItem = this.removeItem.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-  }
-
-  handleInput(event) {
-    this.setState({
-      input: event.target.value,
-    });
-  }
-
-  addItem(event) {
-    this.setState((state) => ({
-      items: state.items.concat(state.input),
-    }));
-
+  const handleSubmit = async (event) => {
     event.preventDefault();
-  }
+    if (error) {
+      throw error;
+    }
+    await addTodo({
+      variables: { todoItem: inputForm },
+    });
+    window.location.reload();
+  };
 
-  removeItem() {
-    let newList = this.state.items;
-    newList.pop();
+  const removeItem = async (id) => {
+    try {
+      await removeTodo({
+        variables: { _id: id },
+      });
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    this.setState((state) => ({
-      items: newList,
-    }));
-  }
-
-  render() {
-    return (
-      <div className="TheBusyBee hiveFlex">
-        <h2 className="bg-yellow-400 text-white text-center max-w-2xl font-mono shadow-xl text-5xl font-medium m-auto mt-5 mb-5 p-5 border-orange-400 rounded-lg">
-          My Busy Bee List:
-        </h2>
-
-        <List items={this.state.items} action={this.removeItem}></List>
-
-        <div className="flex justify-center">
-          <form onSubmit={this.addItem}>
-            <div className="space-x-5">
-              <input
-                placeholder="Goal or Task"
-                className="pl-2 p-2 border-2 border-yellow-500 rounded-lg w-64"
-                type="text"
-                value={this.state.input}
-                onChange={this.handleInput}
-              ></input>
-              <button
-                className="hover:bg-orange-50 hover:text-yellow-800 bg-orange-500 rounded-md text-white px-5 text-xl py-1"
-                type="submit"
-                name="action"
-              >
-                Add
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    );
-  }
-}
-
-function List(props) {
   return (
-    <div className="grid justify-items-center">
-      {props.items.map((item, index) => {
-        return <Item name={item} key={index} action={props.action}></Item>;
-      })}
+    <div className="TheBusyBee hiveFlex">
+      <h2 className="bg-yellow-400 text-white text-center max-w-2xl font-mono shadow-xl text-5xl font-medium m-auto mt-5 mb-5 p-5 border-orange-400 rounded-lg">
+        My Busy Bee List:
+      </h2>
+
+      {loading ? (
+        "Loading..."
+      ) : (
+        <List items={data?.todos} action={removeItem}></List>
+      )}
+
+      <div className="flex justify-center">
+        <form onSubmit={handleSubmit}>
+          <div className="space-x-5">
+            <input
+              placeholder="Goal or Task"
+              className="pl-2 p-2 border-2 border-yellow-500 rounded-lg w-64"
+              type="text"
+              value={inputForm}
+              onChange={handleInput}
+            ></input>
+            <button
+              className="hover:bg-orange-50 hover:text-yellow-800 bg-orange-500 rounded-md text-white px-5 text-xl py-1"
+              type="submit"
+              name="action"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default TheBusyBee;
+
+// import React, { useState } from "react";
+// import Item from "../components/Item";
+
+// class TheBusyBee extends React.Component {
+//   state = {
+//     input: "",
+//     items: ["Meditate", "Finish one chapter", "Do some cardio"],
+//   };
+
+//   constructor(props) {
+//     super(props);
+
+//     this.addItem = this.addItem.bind(this);
+//     this.removeItem = this.removeItem.bind(this);
+//     this.handleInput = this.handleInput.bind(this);
+//   }
+
+//   handleInput(event) {
+//     this.setState({
+//       input: event.target.value,
+//     });
+//   }
+
+//   addItem(event) {
+//     this.setState((state) => ({
+//       items: state.items.concat(state.input),
+//     }));
+
+//     event.preventDefault();
+//   }
+
+//   removeItem() {
+//     let newList = this.state.items;
+//     newList.pop();
+
+//     this.setState((state) => ({
+//       items: newList,
+//     }));
+//   }
+
+//   render() {
+//     return (
+//       <div className="TheBusyBee hiveFlex">
+//         <h2 className="bg-yellow-400 text-white text-center max-w-2xl font-mono shadow-xl text-5xl font-medium m-auto mt-5 mb-5 p-5 border-orange-400 rounded-lg">
+//           My Busy Bee List:
+//         </h2>
+
+//         <List items={this.state.items} action={this.removeItem}></List>
+
+//         <div className="flex justify-center">
+//           <form onSubmit={this.addItem}>
+//             <div className="space-x-5">
+//               <input
+//                 placeholder="Goal or Task"
+//                 className="pl-2 p-2 border-2 border-yellow-500 rounded-lg w-64"
+//                 type="text"
+//                 value={this.state.input}
+//                 onChange={this.handleInput}
+//               ></input>
+//               <button
+//                 className="hover:bg-orange-50 hover:text-yellow-800 bg-orange-500 rounded-md text-white px-5 text-xl py-1"
+//                 type="submit"
+//                 name="action"
+//               >
+//                 Add
+//               </button>
+//             </div>
+//           </form>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+// function List(props) {
+//   return (
+//     <div className="grid justify-items-center">
+//       {props.items.map((item, index) => {
+//         return <Item name={item} key={index} action={props.action}></Item>;
+//       })}
+//     </div>
+//   );
+// }
+
+// export default TheBusyBee;
 // const TheBusyBee = () => {
 //   const [goalField, setGoalField] = useState([
 //     {

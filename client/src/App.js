@@ -69,9 +69,9 @@ function App() {
                 <Route path="" element={<Buzzings />} />
               </Route>{" "}
               {/* Single Post */}
-              <Route path="/bee">
-                <Route path=":username" element={<Bee />} />
-                <Route path="" element={<Bee />} />
+              <Route path="/bee" element={<Bee />}>
+                <Route path="/bee/:username" element={<Bee />} />
+                <Route path="" />
               </Route>
               <Route path="/links" element={<Links />} />
               <Route path="/contact" element={<Contact />} />

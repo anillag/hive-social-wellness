@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const todoSchema = new Schema(
@@ -20,5 +20,6 @@ const todoSchema = new Schema(
     },
   }
 );
+const Todos = model("Todos", todoSchema);
 
-module.exports = todoSchema;
+module.exports = Todos;

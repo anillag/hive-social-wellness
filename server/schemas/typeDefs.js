@@ -27,6 +27,12 @@ const typeDefs = gql`
     username: String
   }
 
+  type Todo {
+    _id: ID
+    todoItem: String
+    createdAt: String
+  }
+
   type Todos {
     _id: ID
     todoItem: String

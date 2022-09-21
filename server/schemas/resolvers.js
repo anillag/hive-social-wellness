@@ -15,22 +15,24 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("friends")
-        .populate("thoughts");
+        .populate("thoughts")
+        .populate("todos");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
         .populate("friends")
-        .populate("thoughts");
+        .populate("thoughts")
+        .populate("todos");
     },
     todos: async (parent, args, context) => {
       if (context.user) {
-        return Todos.find({}).populate("todos");
+        return Todos.find({});
       }
     },
     todo: async (parent, { _id }) => {
       if (context.user) {
-        return Todos.findOne({ _id }).populate("todos");
+        return Todos.findOne({ _id });
       }
     },
 
