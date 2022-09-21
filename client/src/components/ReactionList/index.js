@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const ReactionList = ({ reactions }) => {
   return (
     <div className="card mb-3">
-      <div className="card-header">
-        <span className="text-light">Reactionary Buzzings</span>
-      </div>
       <div className="card-body">
         {reactions &&
           reactions.map((reaction) => (
-            <p className="pill mb-3" key={reaction._id}>
+            <p
+              className="card mb-3 buzzP rounded-3xl max-w-lg grid-container"
+              key={reaction._id}
+            >
               {reaction.reactionBody} //{" "}
               <Link
                 to={`/bee/${reaction.username}`}

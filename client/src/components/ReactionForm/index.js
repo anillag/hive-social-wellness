@@ -39,11 +39,14 @@ const ReactionForm = ({ thoughtId }) => {
         <textarea
           placeholder="Leave a reactionary buzz to this buzz!"
           value={reactionBody}
-          className="form-input col-12 col-md-9"
+          className="form-input col-12 col-md-9 buzz-text text-xs m-5"
           onChange={handleChange}
         ></textarea>
 
-        <button className="btn col-12 col-md-3" type="submit">
+        <button
+          className="btn col-12 col-md-3 rounded-2xl buzz-button flex items-center justify-center"
+          type="submit"
+        >
           Submit
         </button>
       </form>
