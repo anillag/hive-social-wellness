@@ -25,16 +25,21 @@ To create a social app that will hold users responsible for their health and ove
 # Roles & Contribution
 
 ## PHIL: Artistic Director, Concept Curator, Co-Designer
+![IMG_5508](https://user-images.githubusercontent.com/101064266/191400855-0d557df2-e58c-4ca9-9b00-ff6d4d1165e6.jpg)
+
 
 
 <br>
 
 ## JOE: Project Manager, Lead Developer, Overall Great Guy 
+![IMG_5505](https://user-images.githubusercontent.com/101064266/191400853-943804b3-25b6-4c56-a89f-b1eda9aa6a8e.jpg)
+
 
 
 <br>
 
 ## CHARLOTTE: Lead Stylist, Senior Developer, Co-Designer
+![IMG_5504](https://user-images.githubusercontent.com/101064266/191400852-a2978fe6-147b-472f-ba72-408976425542.jpg)
 
 
 <br>
