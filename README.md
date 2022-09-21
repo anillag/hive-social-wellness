@@ -1,4 +1,4 @@
-# Hive Social Wellness 🐝 
+# Hive Social Wellness 🐝 🍯
 
 ## Purpose 
 
@@ -57,6 +57,5 @@ To create a social app that will hold users responsible for their health and ove
     GraphQL, Node.js, Mongoose ODM, MongoDB
 
 
-##Contributors
 
 Made with ❤️ by Joe, Philip, and Charlotte.
