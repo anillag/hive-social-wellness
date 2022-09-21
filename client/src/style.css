@@ -103,10 +103,9 @@ body {
   display: grid;
   grid-template-areas:
     "userName date date"
-    "reaction reaction reaction"
-    "buzz buzz buzz";
+    "buzz buzz buzz"
+    "reaction reaction reaction";
   gap: 10px;
-  background-color: #2196f3;
   padding: 10px;
 }
 
