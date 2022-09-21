@@ -4,6 +4,13 @@
 
 To create a social app that will hold users responsible for their health and overall wellbeing 
 
+## Technolgies Used
+
+    HTML, TAILWINDCSS, JavaScript, bcrypt
+    JWT, dotenv,
+    express, express.js,
+    GraphQL, Node.js, Mongoose ODM, MongoDB
+
 # Goals 
 - [x] Use React for the front end.
 - [x] Use GraphQL with a Node.js and Express.js server.
@@ -25,17 +32,19 @@ To create a social app that will hold users responsible for their health and ove
 # Roles & Contribution
 
 ## PHIL: Artistic Director, Concept Curator, Co-Designer
+<img src="https://user-images.githubusercontent.com/101064266/191400855-0d557df2-e58c-4ca9-9b00-ff6d4d1165e6.jpg" alt="Memoji of Phil" width="200"/>
 
 
 <br>
 
 ## JOE: Project Manager, Lead Developer, Overall Great Guy 
+<img src="https://user-images.githubusercontent.com/101064266/191400853-943804b3-25b6-4c56-a89f-b1eda9aa6a8e.jpg" alt="Memoji of Joe" width="200"/>
 
 
 <br>
 
 ## CHARLOTTE: Lead Stylist, Senior Developer, Co-Designer
-
+<img src="https://user-images.githubusercontent.com/101064266/191400852-a2978fe6-147b-472f-ba72-408976425542.jpg" alt="Memoji of Charlotte" width="200"/>
 
 <br>
 
@@ -44,17 +53,9 @@ To create a social app that will hold users responsible for their health and ove
 
 
 
-## Website
+## Website Link
 
-
-
-
-## Technolgies Used
-
-    HTML, TAILWINDCSS, JavaScript, bcrypt
-    JWT, dotenv,
-    express, express.js,
-    GraphQL, Node.js, Mongoose ODM, MongoDB
+https://afternoon-citadel-47605.herokuapp.com/
 
 
 
