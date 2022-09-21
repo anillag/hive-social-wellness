@@ -44,7 +44,7 @@ const Nav = () => {
                   </Link>
                 </>
               )}
-            </div>
+            </span>
           </div>
 
           <input id="menu-toggle" type="checkbox" />
