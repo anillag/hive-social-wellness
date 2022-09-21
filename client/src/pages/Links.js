@@ -2,9 +2,10 @@ import React from "react";
 // Links content
 const Links = () => {
   return (
-    <div className="hiveFlex">
+    <div className="hiveFlex text-4xl p-5">
       <p>
-        Check out these links to aweosme resources about wellness and BEES!!!!
+        Links to incredible Wellness resources and information about the
+        importance of Bees!!!!
       </p>
     </div>
   );
