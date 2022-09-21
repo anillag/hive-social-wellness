@@ -53,9 +53,13 @@ To create a social app that will hold users responsible for their health and ove
 
 
 
-## Website Link
+## Website Links
 
-https://afternoon-citadel-47605.herokuapp.com/
+Live App: https://afternoon-citadel-47605.herokuapp.com/
+<br>
+Demo Presentation: https://docs.google.com/presentation/d/1D1TFyaE_OfApNHbW3fWgsr2rox9oeLAbeyaRYC-y3ic/edit#slide=id.g320332ed93_1_0
+<br>
+Repo: https://github.com/anillag/hive-social-wellness
 
 
 
